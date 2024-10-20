@@ -90,7 +90,7 @@ function Login() {
               Sign up
             </a>
             <br />
-            <a href="#" class="text-sm text-[#3e64de]  hover:underline">
+            <a href="/forgetpassword" class="text-sm text-[#3e64de]  hover:underline">
               Forgot your password?
             </a>
           </div>

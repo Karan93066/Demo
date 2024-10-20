@@ -1,5 +1,5 @@
 import React from "react";
-
+import { useNavigate } from "react-router-dom";
 const coursesData = [
   {
     id: 1,
@@ -54,6 +54,13 @@ const coursesData = [
 ];
 
 function CourseCard({ course }) {
+  const navigate = useNavigate(); // Get the navigate function
+
+  const handleEnroll = () => {
+    // Navigate to the checkout page with course details
+    navigate("/checkout", { state: { course } });
+  };
+
   return (
     <div className="w-full bg-white shadow-md rounded-lg overflow-hidden max-w-xs mx-auto my-4">
       <img
@@ -91,7 +98,10 @@ function CourseCard({ course }) {
 
         <div>
           {course.available ? (
-            <button className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 w-full">
+            <button 
+              onClick={handleEnroll} // Update to handleEnroll function
+              className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 w-full"
+            >
               Enroll Now
             </button>
           ) : (
