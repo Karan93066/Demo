@@ -62,14 +62,14 @@ function CourseCard({ course }) {
   };
 
   return (
-    <div className="w-full bg-white shadow-md rounded-lg overflow-hidden max-w-xs mx-auto my-4">
+    <div className="w-full bg-[#171E30] shadow-md rounded-lg overflow-hidden max-w-xs mx-auto my-4">
       <img
         className="w-full h-48 object-cover"
         src={course.thumbnail}
         alt={course.title}
       />
       <div className="p-4">
-        <h2 className="text-lg font-semibold text-gray-800 mb-2">
+        <h2 className="text-lg font-medium text-red-500 mb-2">
           {course.title}
         </h2>
         <div className="flex items-center mb-2">
@@ -78,7 +78,7 @@ function CourseCard({ course }) {
             src={course.tutorProfile}
             alt={course.tutorName}
           />
-          <p className="text-gray-700">{course.tutorName}</p>
+          <p className="text-white">{course.tutorName}</p>
         </div>
 
         <div className="mb-4">
@@ -87,10 +87,10 @@ function CourseCard({ course }) {
               <p className="text-green-500 font-bold text-lg">
                 ${course.offPrice}
               </p>
-              <p className="text-gray-500 line-through">${course.actualPrice}</p>
+              <p className="text-white line-through">${course.actualPrice}</p>
             </>
           ) : (
-            <p className="text-gray-800 font-bold text-lg">
+            <p className="text-white font-bold text-lg">
               ${course.actualPrice}
             </p>
           )}
@@ -100,9 +100,9 @@ function CourseCard({ course }) {
           {course.available ? (
             <button 
               onClick={handleEnroll} // Update to handleEnroll function
-              className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 w-full"
+              className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded  w-full"
             >
-              Enroll Now
+              Subscription
             </button>
           ) : (
             <button className="bg-gray-400 text-white py-2 px-4 rounded w-full cursor-not-allowed">
@@ -117,13 +117,15 @@ function CourseCard({ course }) {
 
 function Courses() {
   return (
+    <div className="bg-[#0E1119]">
     <div className="container mx-auto px-4 py-6">
-      <h1 className="text-2xl font-semibold text-center mb-6">Available Courses</h1>
+      <h1 className="text-4xl text-red-500 font-medium text-center mb-6">Available Video</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {coursesData.map((course) => (
           <CourseCard key={course.id} course={course} />
         ))}
       </div>
+    </div>
     </div>
   );
 }

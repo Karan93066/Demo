@@ -21,9 +21,9 @@ function UserAdminPanel() {
         return (
         <UserProfile/>
         );
-      case "Enrolled Courses":
+      case "Enrolled Subscription":
         return (
-          <Courses/>
+          <Subscription/>
         );
       case "Settings":
         return (
@@ -35,9 +35,9 @@ function UserAdminPanel() {
   };
 
   return (
-    <div className="flex min-h-screen border rounded-xl">
+    <div className="flex min-h-screen rounded-xl">
       {/* Sidebar */}
-      <aside className="bg-gray-200 md:w-64 w-20 transition-all duration-300">
+      <aside className=" md:w-64 w-20 bg-[#171E30] text-white transition-all duration-300">
         {/* Profile Section (hidden on mobile) */}
         <div className="hidden md:flex flex-col items-center p-6">
           <img
@@ -45,7 +45,7 @@ function UserAdminPanel() {
             src="https://via.placeholder.com/150"
             alt="Profile"
           />
-          <h3 className="text-xl font-semibold">John Doe</h3>
+          <h3 className="text-xl font-semibold text-red">John Doe</h3>
         </div>
 
         {/* Sidebar Menu */}
@@ -55,8 +55,8 @@ function UserAdminPanel() {
               <a
                 href="#"
                 className={`block py-2 px-4 text-center md:text-left ${
-                  activeLink === "Dashboard" ? "bg-[#3e64de] text-white" : ""
-                } hover:bg-[#3e64de] hover:text-white`}
+                  activeLink === "Dashboard" ? "bg-red-500 text-white" : ""
+                } hover:bg-red-600 hover:text-white`}
                 onClick={() => handleLinkClick("Dashboard")}
               >
                 <span className="md:inline hidden">Dashboard</span>
@@ -67,8 +67,8 @@ function UserAdminPanel() {
               <a
                 href="#"
                 className={`block py-2 px-4 text-center md:text-left ${
-                  activeLink === "My Profile" ? "bg-[#3e64de] text-white" : ""
-                } hover:bg-[#3e64de] hover:text-white`}
+                  activeLink === "My Profile" ? "bg-red-500 text-white" : ""
+                } hover:bg-red-500 hover:text-white`}
                 onClick={() => handleLinkClick("My Profile")}
               >
                 <span className="md:inline hidden">My Profile</span>
@@ -79,11 +79,11 @@ function UserAdminPanel() {
               <a
                 href="#"
                 className={`block py-2 px-4 text-center md:text-left ${
-                  activeLink === "Enrolled Courses" ? "bg-[#3e64de] text-white" : ""
-                } hover:bg-[#3e64de] hover:text-white`}
-                onClick={() => handleLinkClick("Enrolled Courses")}
+                  activeLink === "Enrolled Subscription" ? "bg-red-500 text-white" : ""
+                } hover:bg-red-500 hover:text-white`}
+                onClick={() => handleLinkClick("Enrolled Subscription")}
               >
-                <span className="md:inline hidden">Enrolled Courses</span>
+                <span className="md:inline hidden">Enrolled Subscription</span>
                 <i className="fas fa-book md:hidden"></i>
               </a>
             </li>
@@ -91,8 +91,8 @@ function UserAdminPanel() {
               <a
                 href="#"
                 className={`block py-2 px-4 text-center md:text-left ${
-                  activeLink === "Settings" ? "bg-[#3e64de] text-white" : ""
-                } hover:bg-[#3e64de] hover:text-white`}
+                  activeLink === "Settings" ? "bg-red-500 text-white" : ""
+                } hover:bg-red-500 hover:text-white`}
                 onClick={() => handleLinkClick("Settings")}
               >
                 <span className="md:inline hidden">Settings</span>
@@ -102,9 +102,11 @@ function UserAdminPanel() {
           </ul>
         </nav>
       </aside>
-
+ {/* Divider */}
+ <div className="w-[0.10rem] bg-red-500"></div>
+  
       {/* Main Content */}
-      <main className="flex-1 bg-gray-100 p-8">{renderContent()}</main>
+      <main className="flex-1 bg-[#171E30]  p-8">{renderContent()}</main>
     </div>
   );
 }
@@ -113,31 +115,31 @@ export default UserAdminPanel;
 
 // Dashboard section for user Admin Panel
 const Dashboard=()=> {
-  const enrolledCoursesCount = 3;
-  const activeCoursesCount = 3;
-  const completedCoursesCount = 1;
+  const enrolledSubscriptionCount = 3;
+  const activeSubscriptionCount = 3;
+  const completedSubscriptionCount = 1;
 
   return (
     <div className="flex flex-col md:flex-row justify-between items-center md:items-start space-y-6 md:space-y-0 md:space-x-6 p-6">
-      {/* Enrolled Courses */}
+      {/* Enrolled Subscription */}
       <div className="bg-blue-500 text-white flex flex-col items-center justify-center w-full md:w-1/3 p-6 rounded-lg shadow-lg">
         <FaBookOpen className="text-4xl mb-4" />
-        <h2 className="text-xl font-bold">{enrolledCoursesCount}</h2>
-        <p className="text-lg">Enrolled Courses</p>
+        <h2 className="text-xl font-bold">{enrolledSubscriptionCount}</h2>
+        <p className="text-lg">Enrolled Subscription</p>
       </div>
 
-      {/* Active Courses */}
+      {/* Active Subscription */}
       <div className="bg-green-500 text-white flex flex-col items-center justify-center w-full md:w-1/3 p-6 rounded-lg shadow-lg">
         <FaPlay className="text-4xl mb-4" />
-        <h2 className="text-xl font-bold">{activeCoursesCount}</h2>
-        <p className="text-lg">Active Courses</p>
+        <h2 className="text-xl font-bold">{activeSubscriptionCount}</h2>
+        <p className="text-lg">Active Subscription</p>
       </div>
 
-      {/* Completed Courses */}
+      {/* Completed Subscription */}
       <div className="bg-purple-500 text-white flex flex-col items-center justify-center w-full md:w-1/3 p-6 rounded-lg shadow-lg">
         <FaCheckCircle className="text-4xl mb-4" />
-        <h2 className="text-xl font-bold">{completedCoursesCount}</h2>
-        <p className="text-lg">Completed Courses</p>
+        <h2 className="text-xl font-bold">{completedSubscriptionCount}</h2>
+        <p className="text-lg">Completed Subscription</p>
       </div>
     </div>
   );
@@ -148,38 +150,38 @@ const UserProfile = () => {
   return (
     <>
       <div className="bg-white shadow-lg rounded-lg p-8 max-w-4xl mx-auto mt-8">
-        <h1 className="text-3xl font-bold mb-6 text-center text-[#3e64de]">
+        <h1 className="text-3xl font-bold mb-6 text-center text-red-600">
           My Profile
         </h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Registration Date */}
           <div className="bg-gray-50 p-4 rounded-lg shadow-sm">
-            <p className="text-gray-500 font-medium">Registration Date</p>
+            <p className="text-red-500 font-medium">Registration Date</p>
             <p className="text-lg font-semibold">03/08/2023 10:58 PM</p>
           </div>
 
           {/* First Name */}
           <div className="bg-gray-50 p-4 rounded-lg shadow-sm">
-            <p className="text-gray-500 font-medium">First Name</p>
+            <p className="text-red-500 font-medium">First Name</p>
             <p className="text-lg font-semibold">Test</p>
           </div>
 
           {/* Last Name */}
           <div className="bg-gray-50 p-4 rounded-lg shadow-sm">
-            <p className="text-gray-500 font-medium">Last Name</p>
+            <p className="text-red-500 font-medium">Last Name</p>
             <p className="text-lg font-semibold">Test</p>
           </div>
 
           {/* Username */}
           <div className="bg-gray-50 p-4 rounded-lg shadow-sm">
-            <p className="text-gray-500 font-medium">Username</p>
+            <p className="text-red-500 font-medium">Username</p>
             <p className="text-lg font-semibold">test</p>
           </div>
 
           {/* Email */}
           <div className="bg-gray-50 p-4 rounded-lg shadow-sm md:col-span-2">
-            <p className="text-gray-500 font-medium">Email</p>
+            <p className="text-red-500 font-medium">Email</p>
             <p className="text-lg font-semibold">test@gmail.com</p>
           </div>
         </div>
@@ -189,10 +191,10 @@ const UserProfile = () => {
 };
 
 // enrolled course for User Admin Panel
-const Courses =()=> {
+const Subscription =()=> {
     const [activeTab, setActiveTab] = useState("enrolled"); // Default tab
   
-    const courses = [
+    const Subscription = [
       {
         title: "Secrets of Profitable Trading Strategy",
         totalLessons: 32,
@@ -219,7 +221,7 @@ const Courses =()=> {
       },
     ];
   
-    const completedCourses = [
+    const completedSubscription = [
       {
         title: "Advanced Forex Techniques",
         totalLessons: 12,
@@ -252,11 +254,11 @@ const Courses =()=> {
       );
     };
   
-    const renderCourses = (coursesList) => {
-      return coursesList.map((course, index) => (
+    const renderSubscription = (SubscriptionList) => {
+      return SubscriptionList.map((course, index) => (
         <div
           key={index}
-          className="bg-white shadow-md rounded-lg p-4 mb-6 flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-6"
+          className="bg-gray-500 border border-red-400 text-white shadow-md rounded-lg p-4 mb-6 flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-6"
         >
           {/* Thumbnail */}
           <img
@@ -268,16 +270,16 @@ const Courses =()=> {
           {/* Course Details */}
           <div className="flex-1">
             <h3 className="text-xl font-semibold">{course.title}</h3>
-            <p className="text-gray-500">
+            <p className="text-white">
               {course.completedLessons}/{course.totalLessons} Lessons Completed
             </p>
-            <div className="mt-2 w-full bg-gray-200 rounded-full h-2.5">
+            <div className="mt-2 w-full bg-white rounded-full h-2.5">
               <div
                 className="bg-blue-600 h-2.5 rounded-full"
                 style={{ width: `${course.progress}%` }}
               ></div>
             </div>
-            <p className="mt-2 text-gray-500">{course.progress}% Complete</p>
+            <p className="mt-2 text-white">{course.progress}% Complete</p>
           </div>
   
           {/* Action Buttons */}
@@ -298,36 +300,36 @@ const Courses =()=> {
             <button
               onClick={() => setActiveTab("enrolled")}
               className={`px-4 py-2 ${
-                activeTab === "enrolled" ? "bg-blue-500 text-white" : "bg-gray-200"
-              } rounded-lg hover:bg-blue-600`}
+                activeTab === "enrolled" ? "bg-red-500 text-white" : "bg-gray-200"
+              } rounded-lg hover:bg-red-500`}
             >
-              Enrolled Courses (3)
+              Enrolled Subscription (3)
             </button>
             <button
               onClick={() => setActiveTab("active")}
               className={`px-4 py-2 ${
-                activeTab === "active" ? "bg-blue-500 text-white" : "bg-gray-200"
-              } rounded-lg hover:bg-blue-600`}
+                activeTab === "active" ? "bg-red-500 text-white" : "bg-gray-200"
+              } rounded-lg hover:bg-red-600`}
             >
-              Active Courses (3)
+              Active Subscription (3)
             </button>
             <button
               onClick={() => setActiveTab("completed")}
               className={`px-4 py-2 ${
                 activeTab === "completed"
-                  ? "bg-blue-500 text-white"
+                  ? "bg-red-500 text-white"
                   : "bg-gray-200"
-              } rounded-lg hover:bg-blue-600`}
+              } rounded-lg hover:bg-red-600`}
             >
-              Completed Courses
+              Completed Subscription
             </button>
           </div>
   
           {/* Course Cards */}
           <div>
-            {activeTab === "enrolled" && renderCourses(courses)}
-            {activeTab === "active" && renderCourses(courses)}
-            {activeTab === "completed" && renderCourses(completedCourses)}
+            {activeTab === "enrolled" && renderSubscription(Subscription)}
+            {activeTab === "active" && renderSubscription(Subscription)}
+            {activeTab === "completed" && renderSubscription(completedSubscription)}
           </div>
         </div>
       </div>

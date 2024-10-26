@@ -37,9 +37,20 @@ function Signup() {
 
   return (
     <>
-      <main className="main bg-white px-6 md:px-16 m-6">
-        <div className="w-full border border-black-100 shadow-xl border-xl max-w-xl p-10 mx-auto lg:my-16">
-          <form onSubmit={handleSubmit} className="border-b-2 py-3">
+      <main
+       style={{
+         backgroundImage: `url('./Background.jpg')`,
+         backgroundSize: "cover",
+         backgroundPosition: "center",
+         minHeight: "100vh",
+         display: "flex",
+         alignItems: "center",
+         justifyContent: "center",
+       }}
+     >
+       <div className="main w-full px-6 md:px-20 m-6">
+         <div className="w-full max-w-2xl border border-gray-200 shadow-2xl rounded-lg p-10 mx-auto bg-white lg:my-16">
+         <form onSubmit={handleSubmit} className="border-b-2 py-3">
             <h1 className="text-xl mb-2">Create Your Account</h1>
 
             {/* Display error if exists */}
@@ -161,7 +172,7 @@ function Signup() {
 
             <div>
               <button
-                className="w-full bg-[#3e64de]  text-white py-2 px-3 rounded"
+                className="w-full bg-red-500 hover:bg-red-600 text-white py-2 px-3 rounded"
                 type="submit"
               >
                 <a href="/adminpanel">
@@ -172,12 +183,13 @@ function Signup() {
           </form>
 
           <div className="mt-2 mb-3">
-            <a href="/" className="text-sm text-[#3e64de]  hover:underline">
+            <a href="/" className="text-sm text-red-600  hover:underline">
               Already have an account? Log in
             </a>
           </div>
-        </div>
-      </main>
+         </div>
+       </div>
+     </main>
     </>
   );
 }

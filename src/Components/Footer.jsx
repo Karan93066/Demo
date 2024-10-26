@@ -7,8 +7,8 @@ function Footer() {
         <div class="flex flex-wrap text-left lg:text-left">
         <div className="lg:w-4/12">
         <div class="w-full flex flex-col gap-5  px-4 ">
-            <div className="w-full md:w-[200px] p-3 bg-white rounded-md flex justify-center">
-            <img src="https://i.postimg.cc/MZCBXb1K/logo.png" alt="LOGO" srcset=""/>
+            <div className="w-full md:w-[200px] p-3 rounded-md flex justify-center">
+            <img src="/spotrunlogo.png" alt="LOGO" />
             </div>
             <div>
             <h5 class="text-lg mt-0 mb-2 text-blueGray-600">
@@ -19,25 +19,25 @@ function Footer() {
           </div>
         <div class=" w-full flex items-center gap-2 mt-6 lg:mb-0 mb-6 px-4">
               <button
-                class="w-10 h-10 rounded-full ease-in-out delay-150  bg-[#FD346E] hover:bg-[#7F54B3]  hover:scale-100 hover:-translate-y-1  text-white flex items-center justify-center hover:opacity-90 transition"
+                class="w-10 h-10 rounded-full ease-in-out delay-150  bg-red-500 hover:bg-red-600  hover:scale-100 hover:-translate-y-1  text-white flex items-center justify-center hover:opacity-90 transition"
                 type="button"
               >
                 <i class="fab fa-twitter"></i>
               </button>
               <button
-                class="w-10 h-10 rounded-full ease-in-out delay-150  bg-[#FD346E] hover:bg-[#7F54B3]  hover:scale-100 hover:-translate-y-1  text-white flex items-center justify-center hover:opacity-90 transition"
+                class="w-10 h-10 rounded-full ease-in-out delay-150  bg-red-500 hover:bg-red-600  hover:scale-100 hover:-translate-y-1  text-white flex items-center justify-center hover:opacity-90 transition"
                 type="button"
               >
                 <i class="fab fa-facebook-square"></i>
               </button>
               <button
-                class="w-10 h-10 rounded-full ease-in-out delay-150  bg-[#FD346E] hover:bg-[#7F54B3]  hover:scale-100 hover:-translate-y-1  text-white flex items-center justify-center hover:opacity-90 transition"
+                class="w-10 h-10 rounded-full ease-in-out delay-150  bg-red-500 hover:bg-red-600  hover:scale-100 hover:-translate-y-1  text-white flex items-center justify-center hover:opacity-90 transition"
                 type="button"
               >
                 <i class="fab fa-youtube"></i>
               </button>
               <button
-                class="w-10 h-10 rounded-full ease-in-out delay-150  bg-[#FD346E] hover:bg-[#7F54B3]  hover:scale-100 hover:-translate-y-1  text-white flex items-center justify-center hover:opacity-90 transition"
+                class="w-10 h-10 rounded-full ease-in-out delay-150  bg-red-500 hover:bg-red-600  hover:scale-100 hover:-translate-y-1  text-white flex items-center justify-center hover:opacity-90 transition"
                 type="button"
               >
                 <i class="fab fa-instagram"></i>
@@ -166,7 +166,7 @@ function Footer() {
             <div class="text-md text-blueGray-500  py-1">
               Copyright ©{" "}
               <span id="get-current-year">
-                2021 Good Work Enterprises All Rights Reserved.
+                2024 SPORT RUN BY NZAZRO TECHNOLOGIES
               </span>
             </div>
           </div>

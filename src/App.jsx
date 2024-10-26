@@ -9,6 +9,7 @@ import UserAdminPanel from "./Components/UserAdminPanel";
 import AdminPanel from "./Components/AdminPanel/MainAdminPanel";
 import ForgetPassword from "./Components/ForgetPassword";
 import Checkout from "./Components/Checkout"
+import Loader from "./Components/Loader";
 function App() {
   return (
     <>
@@ -16,12 +17,13 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/course" element={<Courses />} />
+        <Route path="/subscription" element={<Courses />} />
         <Route path="/useradminpanel" element={<UserAdminPanel />} />
         <Route path="/adminpanel" element={<AdminPanel />} />
         <Route path="/forgetpassword" element={<ForgetPassword />} />
         <Route path="/checkout" element={<Checkout />} />
       </Routes>
+      {/* <Loader/> */}
       <Footer />
     </>
   );

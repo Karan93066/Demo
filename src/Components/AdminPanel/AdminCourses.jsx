@@ -43,14 +43,14 @@ function AllCourses() {
   };
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen">
-      <h2 className="text-2xl font-semibold mb-4">All Courses</h2>
+    <div className="p-6  min-h-screen">
+      <h2 className="text-2xl font-semibold mb-4 text-red-500">All Video</h2>
 
       {!isEditing ? (
         // Courses list view
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-4">
           {courses.map((course) => (
-            <div key={course.id} className="bg-white rounded-lg shadow-lg p-4">
+            <div key={course.id} className="bg-[#171E30] border border-red-400 rounded-lg shadow-lg p-4">
               <div className="mb-4">
                 {course.thumbnail ? (
                   <img
@@ -64,10 +64,10 @@ function AllCourses() {
                   </div>
                 )}
               </div>
-              <h3 className="text-lg font-semibold">{course.name}</h3>
-              <p className="text-gray-600">Price: ${course.price}</p>
-              <p className="text-gray-600">Off Price: ${course.offPrice}</p>
-              <p className="text-gray-600">Demo Video: {course.demoVideo}</p>
+              <h3 className="text-lg font-semibold text-red-500">{course.name}</h3>
+              <p className="text-white">Price: ${course.price}</p>
+              <p className="text-white">Off Price: ${course.offPrice}</p>
+              <p className="text-white">Demo Video: {course.demoVideo}</p>
               <div className="mt-4 flex space-x-4">
                 <button
                   onClick={() => handleEdit(course)}
@@ -124,10 +124,10 @@ const EditCourse = ({ course, setEditingCourse, courses, setCourses, handleBack 
 
   return (
     <div className="p-6 bg-white shadow-lg rounded-lg max-w-lg mx-auto mt-6">
-      <h2 className="text-2xl font-semibold mb-4">Edit Course</h2>
+      <h2 className="text-2xl font-semibold mb-4">Edit Video</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label className="block mb-2">Course Name</label>
+          <label className="block mb-2">Video Name</label>
           <input
             type="text"
             name="name"

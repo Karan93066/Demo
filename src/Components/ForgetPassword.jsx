@@ -18,7 +18,7 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div className="p-10 bg-gray-100 flex items-center justify-center ">
+    <div className="p-10  flex items-center justify-center ">
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-xl">
         <p className="py-4">
         Lost your password? Please enter your username or email address. You will receive a link to create a new password via email.
@@ -38,7 +38,7 @@ const ForgotPassword = () => {
           </div>
           <button
             type="submit"
-            className="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700"
+            className="w-full py-2 px-4 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700"
           >
             Forget Password
           </button>
