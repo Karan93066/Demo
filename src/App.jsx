@@ -10,6 +10,9 @@ import AdminPanel from "./Components/AdminPanel/MainAdminPanel";
 import ForgetPassword from "./Components/ForgetPassword";
 import Checkout from "./Components/Checkout"
 import Loader from "./Components/Loader";
+import ChangePassword from "./Components/ChangePassword";
+import CancelSubscription from "./Components/Cancelsubscription";
+import NewSessionForm from "./Components/AdminPanel/NewSessions";
 function App() {
   return (
     <>
@@ -22,6 +25,9 @@ function App() {
         <Route path="/adminpanel" element={<AdminPanel />} />
         <Route path="/forgetpassword" element={<ForgetPassword />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/changepassword" element={<ChangePassword />} />
+        <Route path="/cancelsubscription" element={<CancelSubscription />} />
+        <Route path="/newsession" element={<NewSessionForm />} />
       </Routes>
       {/* <Loader/> */}
       <Footer />
