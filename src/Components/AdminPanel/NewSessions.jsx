@@ -18,8 +18,8 @@ function NewSessionForm() {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-800 text-gray-200">
-            <div className="w-full max-w-lg p-8 space-y-8 bg-black rounded-lg shadow-md">
+        <div className="min-h-screen flex items-center justify-center text-gray-200">
+            <div className="w-full max-w-xl p-8 space-y-10 bg-black rounded-lg shadow-md">
                 <h2 className="text-2xl font-bold text-center text-red-500">Create New Session</h2>
                 {successMessage && <p className="text-center text-green-500">{successMessage}</p>}
                 <form onSubmit={handleSubmit} className="space-y-4">

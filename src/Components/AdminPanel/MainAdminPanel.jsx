@@ -4,6 +4,8 @@ import AllUsers from "./AllUsers";
 import UploadCourse from "./UploadCourse";
 import PurchasedCourses from "./PurchasedCourses";
 import AdminCourses from "./AdminCourses";
+import CancelledSubscriptions from "./CancelSubscription";
+import NewSessionForm from "./NewSessions";
 
 function AdminPanel() {
   const [activeTab, setActiveTab] = useState("allusers");
@@ -30,6 +32,14 @@ function AdminPanel() {
       return (
        <AdminCourses/>
       );
+    case "cancelled":
+        return (
+         <CancelledSubscriptions/>
+        );
+        case "addsession":
+          return (
+           <NewSessionForm/>
+          );
     default:
       return null;
   }
@@ -85,6 +95,30 @@ function AdminPanel() {
               onClick={() => handleLinkClick("admincourse")}
             >
               <span className="md:inline hidden">All Videos</span>
+              <i className="md:hidden"><FaBookOpen /></i>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              className={`block py-2 px-4 text-center md:text-left ${
+                activeTab === "cancelled" ? "bg-red-500 text-white" : ""
+              } hover:bg-red-600 hover:text-white`}
+              onClick={() => handleLinkClick("cancelled")}
+            >
+              <span className="md:inline hidden">Cancel Subscription</span>
+              <i className="md:hidden"><FaBookOpen /></i>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              className={`block py-2 px-4 text-center md:text-left ${
+                activeTab === "addsession" ? "bg-red-500 text-white" : ""
+              } hover:bg-red-600 hover:text-white`}
+              onClick={() => handleLinkClick("addsession")}
+            >
+              <span className="md:inline hidden">Add New Session</span>
               <i className="md:hidden"><FaBookOpen /></i>
             </a>
           </li>

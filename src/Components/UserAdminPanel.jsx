@@ -25,6 +25,10 @@ function UserAdminPanel() {
         return (
           <Subscription/>
         );
+        case "Session":
+        return (
+          <Session/>
+        );
       case "Settings":
         return (
          <ForgotPassword/>
@@ -84,6 +88,18 @@ function UserAdminPanel() {
                 onClick={() => handleLinkClick("Enrolled Subscription")}
               >
                 <span className="md:inline hidden">Enrolled Subscription</span>
+                <i className="fas fa-book md:hidden"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className={`block py-2 px-4 text-center md:text-left ${
+                  activeLink === "Enrolled Subscription" ? "bg-red-500 text-white" : ""
+                } hover:bg-red-500 hover:text-white`}
+                onClick={() => handleLinkClick("Session")}
+              >
+                <span className="md:inline hidden">Session</span>
                 <i className="fas fa-book md:hidden"></i>
               </a>
             </li>
@@ -335,4 +351,63 @@ const Subscription =()=> {
       </div>
     );
   }
+
+const Session =()=>{
+    // Demo session data
+    const sessions = [
+        {
+            title: 'React Basics',
+            description: 'Introduction to React and component-based development.',
+            meetingLink: 'https://example.com/session1',
+            time: '2024-11-05T10:00:00',
+        },
+        {
+            title: 'Advanced JavaScript',
+            description: 'Deep dive into ES6+ features and asynchronous programming.',
+            meetingLink: 'https://example.com/session2',
+            time: '2024-11-10T14:30:00',
+        },
+        {
+            title: 'Node.js for Beginners',
+            description: 'Learn the basics of server-side JavaScript with Node.js.',
+            meetingLink: 'https://example.com/session3',
+            time: '2024-11-15T09:00:00',
+        },
+    ];
+
+    return (
+        <div className="min-h-screen text-gray-200 p-4">
+            {sessions && sessions.length > 0 ? (
+                <div className="w-full bg-gray-800 rounded-lg shadow-md overflow-hidden">
+                    <table className="w-full text-left">
+                        <thead>
+                            <tr className="bg-gray-700 text-red-500">
+                                <th className="p-4">Title</th>
+                                <th className="p-4">Description</th>
+                                <th className="p-4">Meeting Link</th>
+                                <th className="p-4">Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {sessions.map((session, index) => (
+                                <tr key={index} className="border-b border-gray-700 hover:bg-gray-700">
+                                    <td className="p-4 text-gray-300">{session.title}</td>
+                                    <td className="p-4 text-gray-300">{session.description}</td>
+                                    <td className="p-4 text-red-400">
+                                        <a href={session.meetingLink} target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-red-500">
+                                            Join Session
+                                        </a>
+                                    </td>
+                                    <td className="p-4 text-gray-300">{new Date(session.time).toLocaleString()}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+            ) : (
+                <p className="text-center text-lg text-gray-300 mt-8">There is no Upcoming Session. We will update you soon.</p>
+            )}
+        </div>
+    );
+}
   

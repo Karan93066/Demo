@@ -28,7 +28,8 @@ function App() {
         <Route path="/changepassword" element={<ChangePassword />} />
         <Route path="/cancelsubscription" element={<CancelSubscription />} />
         <Route path="/newsession" element={<NewSessionForm />} />
-      </Routes>
+        {/* <Route path="/session" element={<SessionTable />} /> */}
+        </Routes>
       {/* <Loader/> */}
       <Footer />
     </>
